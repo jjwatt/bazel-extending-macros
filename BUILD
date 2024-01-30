@@ -27,7 +27,7 @@ file_generator(
 )
 file_writer(
     name = "generator",
-    srcs = ["cat.sh"]
+    srcs = ["echo.sh"]
 )
 # Here, you load the file_generator symbol from a .bzl file located in
 #     the //path package. By putting macro function definitions in a
