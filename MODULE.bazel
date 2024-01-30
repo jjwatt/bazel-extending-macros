@@ -1,0 +1,4 @@
+module(
+    name = "macros_examples",
+    version = "0.0.1",
+)
