@@ -16,7 +16,7 @@
 # file_generator, which has name and arg parameters. Replace the genrule
 # with the following:
 
-load("//path:generator.bzl", "file_generator", "generator")
+load("//path:generator.bzl", "file_generator", "file_writer")
 file_generator(
     name = "file",
     arg = "some_arg",
@@ -25,8 +25,9 @@ file_generator(
     name = "file-two",
     arg = "some_arg_two",
 )
-generator(
-    name = "generator"
+file_writer(
+    name = "generator",
+    srcs = ["cat.sh"]
 )
 # Here, you load the file_generator symbol from a .bzl file located in
 #     the //path package. By putting macro function definitions in a

@@ -1,5 +1,4 @@
 # generator.bzl
-# TODO(jjwatt): Add :generator tool and build
 def file_generator(name, arg, visibility=None):
     native.genrule(
         name = name,
@@ -31,8 +30,8 @@ def chained_genrules(name, arg, visibility=None):
 # allows macro authors to hide the outputs of intermediate rules from
 # being depended upon by other targets in the workspace.
 
-def generator(name):
+def file_writer(name, srcs):
     native.sh_binary(
         name = name,
-        srcs = ["cat.sh"],
+        srcs = srcs,
     )
